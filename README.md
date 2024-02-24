@@ -33,14 +33,14 @@ Se utilizó la herramienta **MySQL Workbench** para la importación de datos y e
 #### Get Countries Information
 
 ```http
-  GET /api/countries
+  GET /api/countries?page=${page}&rows=${rows}&list=${list}
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `page` | `int` | **Required**. |
-| `rows` | `int` | **Required**. |
-| `list` | `string` | **Not Required**. |
+| Parameter | Type     | Description                | Example |
+| :-------- | :------- | :------------------------- |--------|
+| `page` | `int` | **Required**. |1|
+| `rows` | `int` | **Required**. |5|
+| `list` | `string` | **Not Required**. |"1,2,3,4"|
 
 
 ## Environment Variables
