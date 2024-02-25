@@ -24,6 +24,7 @@ const getCountries = async (req, res) => {
         queryList += `${item},`;
       }
       queryList = queryList.replace(/.$/, ")");
+      queryList += ` ORDER BY FIELD(id,${list})`;
     }
 
     // Se calcula el total de paises filtrados
