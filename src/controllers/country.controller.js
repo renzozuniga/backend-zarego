@@ -5,7 +5,7 @@ import moment from "moment";
 Parametros:
     - page: Pagina que se quiere mostrar
     - rows: Intervalo de registros a mostrar por pagina
-    - list: Lista de ID's de paises seleccionados (opcional, sino se pasa se muestran todos los paises) 
+    - list: Lista de ID's de paises seleccionados (opcional) 
 */
 const getCountries = async (req, res) => {
   try {
@@ -25,6 +25,17 @@ const getCountries = async (req, res) => {
       }
       queryList = queryList.replace(/.$/, ")");
       queryList += ` ORDER BY FIELD(id,${list})`;
+    } else {
+      // Respuesta por default sin seleccion de paises
+      res.json({
+        metadata: {
+          page: 1,
+          rows: 10,
+          total_registers: 0,
+        },
+        data: [],
+      });
+      return;
     }
 
     // Se calcula el total de paises filtrados
@@ -50,6 +61,7 @@ const getCountries = async (req, res) => {
       data: result.map((obj) => ({ ...obj, date_added: date_formatted })),
     });
   } catch (error) {
+    console.log("error: ", error);
     res.status(500);
     res.send(error.message);
   }
