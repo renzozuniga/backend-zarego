@@ -57,6 +57,14 @@ describe("Endpoints", () => {
       expect(res.body.data.length).toEqual(rows);
     });
 
+    it("should respond with a 200 status code for all", async () => {
+      const res = await request(app).get(
+        `/api/countries/all?list=${list}`
+      );
+
+      expect(res.statusCode).toEqual(200);
+    });
+
     it("should respond with a 200 status code for options", async () => {
       const res = await request(app).get(
         `/api/countries/options`

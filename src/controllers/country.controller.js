@@ -55,6 +55,37 @@ const getCountries = async (req, res) => {
   }
 };
 
+const getAllCountries = async (req, res) => {
+  try {
+    const connection = await getConnection();
+
+    // Se usa un parametro para filtrar el endpoint
+    const { list } = req.query;
+
+    // Se realiza logica para filtrar por ID's de paises
+    let queryList = "";
+    if (list) {
+      queryList = "WHERE id IN (";
+      let arrayList = list.split(",");
+      for (let item of arrayList) {
+        queryList += `${item},`;
+      }
+      queryList = queryList.replace(/.$/, ")");
+      queryList += ` ORDER BY FIELD(id,${list})`;
+    }
+
+    // Se obtiene la informacion de los paises seleccionados
+    const result = await connection.query(`SELECT * FROM country ${queryList}`);
+
+    res.json({
+      data: result,
+    });
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+
 const getCountriesOptions = async (req, res) => {
   try {
     const connection = await getConnection();
@@ -78,5 +109,6 @@ const getCountriesOptions = async (req, res) => {
 
 export const methods = {
   getCountries,
+  getAllCountries,
   getCountriesOptions,
 };

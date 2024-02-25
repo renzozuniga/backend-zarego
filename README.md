@@ -42,6 +42,16 @@ Se utilizó la herramienta **MySQL Workbench** para la importación de datos y e
 | `rows` | `int` | **Required**. |5|
 | `list` | `string` | **Not Required**. |"1,2,3,4"|
 
+#### Get All Countries
+
+```http
+  GET /api/countries/all&list=${list}
+```
+
+| Parameter | Type     | Description                | Example |
+| :-------- | :------- | :------------------------- |--------|
+| `list` | `string` | **Required**. |"1,2,3,4"|
+
 #### Get Countries Options
 
 ```http
