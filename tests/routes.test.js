@@ -56,6 +56,15 @@ describe("Endpoints", () => {
       expect(res.body.metadata).toEqual(metadata_response);
       expect(res.body.data.length).toEqual(rows);
     });
+
+    it("should respond with a 200 status code for options", async () => {
+      const res = await request(app).get(
+        `/api/countries/options`
+      );
+
+      expect(res.statusCode).toEqual(200);
+    });
+
   });
 
   describe("Error response", () => {

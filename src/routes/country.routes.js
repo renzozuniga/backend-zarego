@@ -5,5 +5,6 @@ const router = Router();
 
 // Usamos una ruta para obtener la informacion de los paises seleccionados
 router.get("/", countryController.getCountries);
+router.get("/options", countryController.getCountriesOptions);
 
 export default router;

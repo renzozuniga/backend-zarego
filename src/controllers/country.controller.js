@@ -54,6 +54,28 @@ const getCountries = async (req, res) => {
   }
 };
 
+const getCountriesOptions = async (req, res) => {
+  try {
+    const connection = await getConnection();
+
+    // Se obtiene id y nombre de los paises seleccionados
+    const result = await connection.query(
+      `SELECT id, country_name FROM country`
+    );
+
+    res.json({
+      data: result.map((obj) => ({
+        label: obj.country_name,
+        value: obj.id,
+      })),
+    });
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+
 export const methods = {
   getCountries,
+  getCountriesOptions,
 };
