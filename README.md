@@ -50,7 +50,6 @@ Se utilizó la herramienta **MySQL Workbench** para la importación de datos y e
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
 Para levantar el proyecto, se tendrá que agregar las siguientes variables de entorno al archivo .env
 
 `RDS_HOST`
