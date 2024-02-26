@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 // CORS
 // Usamos cors para pasar cookies u otras credenciales a cliente
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.ORIGIN_URI,
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
