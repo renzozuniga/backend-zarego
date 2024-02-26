@@ -70,6 +70,8 @@ Para levantar el proyecto, se tendrá que agregar las siguientes variables de en
 
 `RDS_PASSWORD`
 
+`ORIGIN_URI`
+
 ## Run Locally
 
 Clone the project
