@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 // CORS
 // Usamos cors para pasar cookies u otras credenciales a cliente
 const corsOptions = {
-  origin: process.env.ORIGIN_URI,
+  origin: 'https://main.d8uv0l0wskv0.amplifyapp.com',
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
