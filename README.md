@@ -1,7 +1,7 @@
 
 # Backend NodeJS Zarego
 
-Se construye una REST API con un endpoint para mostrar información de paises basados en una base de datos de terceros para enviar a una website y aplicación movil.
+Se construye una REST API con endpoints para mostrar información de paises basados en una base de datos de terceros para enviar a una website y aplicación movil.
 
 A continuación se explicará el proceso de construcción del proyecto:
 
