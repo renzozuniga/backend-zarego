@@ -9,7 +9,7 @@ A continuación se explicará el proceso de construcción del proyecto:
 
 
 ## Preprocesamiento de datos de entrada
-El preprocesamiento de datos es necesario, ya que se requiere una estructura específica para poblar la base de datos del proyecto. Esto fue realizada como experimentación en lenguaje **Python** usando **Jupyter Notebook**.
+El preprocesamiento de datos es necesario, ya que se requiere una estructura específica para poblar la base de datos del proyecto backend. Esto fue realizada como experimentación en lenguaje **Python** usando **Jupyter Notebook**.
 
 #### Extracción de datos
 Se realiza la extracción de datos de acuerdo al archivo **CSV** que se obtiene de la fuente https://data.world/adamhelsinger/globe-project, la cual nos brinda una data actualizada al dia de hoy.
